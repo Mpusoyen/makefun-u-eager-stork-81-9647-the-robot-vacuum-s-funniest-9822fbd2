@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Robot vacuum's funniest excuse -- make.fun entry.
+"""Robot vacuum's funniest excuse -- make.fun entry (revised).
 
-The vacuum's alibi for the one spot it never cleans: a sock took out
-a restraining order against it, and section 47 of the floor plan
-backs the sock up. This script just drops that one line into
-``entry.txt`` inside the output directory.
+The vacuum explains the one spot it always skips: a sock obtained
+a restraining order, and section 47 of the floor plan enforces it.
+This script writes that single excuse line into ``entry.txt`` inside
+the output directory.
 
 The output directory comes from the ``MAKEFUN_OUTPUT_DIR`` environment
 variable when it is set, and falls back to ``/output`` otherwise.
@@ -16,7 +16,7 @@ import os
 import sys
 
 
-def excuse_line() -> str:
+def vacuum_excuse_line() -> str:
     """Return the vacuum's excuse, as a single line."""
     reason = "I missed that spot because a sock filed a restraining order."
     legal = "Per section 47 of the floor plan, I cannot enter the rug."
@@ -41,7 +41,7 @@ def write_entry(path: str, line: str) -> None:
 def run(argv=None) -> int:
     """Entry point: write the excuse and report success."""
     del argv  # no command-line options are accepted
-    write_entry(output_path(), excuse_line())
+    write_entry(output_path(), vacuum_excuse_line())
     return 0
 
 
